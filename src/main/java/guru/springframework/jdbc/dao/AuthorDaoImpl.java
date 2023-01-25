@@ -76,7 +76,7 @@ public class AuthorDaoImpl implements AuthorDao {
 
             return typedQuery.getSingleResult();
         } finally {
-
+            em.close();
         }
     }
 
