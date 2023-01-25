@@ -118,6 +118,14 @@ public class DaoIntegrationTest {
     }
 
     @Test
+    void testFindAllBooks() {
+        List<Book> books = bookDao.findAllBooks();
+
+        assertThat(books).isNotNull();
+        assertThat(books.size()).isGreaterThan(0);
+    }
+
+    @Test
     void testDeleteBook() {
         Book book = new Book();
         book.setIsbn("1234");

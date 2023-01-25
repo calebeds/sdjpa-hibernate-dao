@@ -1,14 +1,15 @@
 package guru.springframework.jdbc.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "find_book_by_title", query = "FROM Book b WHERE b.title = :title"),
+        @NamedQuery(name = "find_all_books", query = "FROM Book")
+})
 public class Book {
 
     @Id
