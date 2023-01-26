@@ -13,4 +13,5 @@ public interface BookDao {
     Book updateBook(Book book);
     void deleteBookById(Long id);
     List<Book> findAllBooks();
+    Book findBookByTitleNative(String title);
 }
